@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixiBoard</title>
+    <!-- Lien vers la bibliothèque Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- PWA pour iPhone et autres -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#000000">
+
+<!-- Icônes pour iOS et Android -->
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-180x180.png">
+
+
+<!-- NoSleep pour éviter la mise en veille -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nosleep/0.12.0/NoSleep.min.js"></script>
+<script>
+    const noSleep = new NoSleep();
+    document.addEventListener('click', () => {
+        noSleep.enable();
+        console.log("NoSleep activé !");
+    });
+</script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Menu principal centré */
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+            color: white;
+            font-size: 50px;
+            margin: 0 30px;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 50%;
+            background-color: #444;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #575757;
+        }
+
+        @media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu a {
+        font-size: 40px; /* Ajuste la taille des icônes pour les petits écrans */
+        margin: 15px;
+    }
+}
+
+/* Disposition en ligne pour les écrans plus larges */
+@media (min-width: 769px) {
+    .menu {
+        flex-direction: row;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="home-logo" onclick="showMenu()">🏠</div>
+
+    <!-- Menu principal avec icônes -->
+    <div class="menu">
+        <a href="tematique.html"><i class="fa-solid fa-gifts"></i></a>
+        <a href="meteo.html"><i class="fa-solid fa-cloud"></i></a>
+        <a href="heure.html"><i class="fas fa-clock"></i></a>
+        <a href="timer.html"><i class="fa-solid fa-hourglass-half"></i></a>
+        <a href="music.html"><i class="fa-solid fa-music"></i>
+        <a href="photos.html"><i class="fa-regular fa-image"></i></a>
+    </div>
+
+
+
+
+</body>
+</html>
